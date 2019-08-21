@@ -31,5 +31,5 @@ curl http://localhost:1337 # or just open it in your browser
 make db/migrate
 make assets
 make uberjar
-java -jar target/todos-1.0.0-standalone.jar -m server 1337
+java -jar target/todos.jar
 ```
