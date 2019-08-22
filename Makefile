@@ -4,9 +4,12 @@ test:
 	COAST_ENV=test clj -A\:test
 
 clean:
+	rm -rf build/*
 	rm -rf target/*
 
 uberjar:
+	mkdir build
+	cp -r db build
 	clj -A\:uberjar
 
 repl:
