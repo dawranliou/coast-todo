@@ -1,6 +1,7 @@
 (ns routes
   (:require [coast]
-            [components]))
+            [components]
+            [middleware]))
 
 (def routes
   (coast/routes
@@ -8,7 +9,15 @@
     (coast/site
       (coast/with-layout components/layout
         [:get "/" :site.home/index]
-        [:resource :todo]))
+        [:get "/sign-up" :member/build]
+        [:post "/members" :member/create]
+        [:get "/sign-in" :session/build]
+        [:post "/sessions" :session/create]
+
+        (coast/with
+          middleware/auth
+          [:delete "/sessions" :session/delete]
+          [:resource :todo])))
 
     (coast/api
       (coast/with-prefix "/api"
