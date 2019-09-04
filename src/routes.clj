@@ -16,6 +16,7 @@
 
         (coast/with
           middleware/auth
+          [:get "/dashboard" :member/dashboard]
           [:delete "/sessions" :session/delete]
           [:resource :todo])))
 
