@@ -38,5 +38,8 @@
       (submit "Sign out"))))
 
 (comment
-  (coast/insert {:member/email    "aaa"
-                 :member/password "bbb"}))
+  ;; manually insert record
+  (-> {:member/email    "aaa"
+       :member/password "bbb"}
+      (update :member/password hashers/derive)
+      (coast/insert)))

@@ -9,8 +9,8 @@
     (coast/site
       (coast/with-layout components/layout
         [:get "/" :site.home/index]
-        [:get "/sign-up" :member/build]
-        [:post "/members" :member/create]
+        #_[:get "/sign-up" :member/build]
+        #_[:post "/members" :member/create]
         [:get "/sign-in" :session/build]
         [:post "/sessions" :session/create]
 
