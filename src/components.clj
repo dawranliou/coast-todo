@@ -13,7 +13,7 @@
 
 
 (defn link-to [url & body]
-  [:a {:href url :class "f6 link underline blue"}
+  [:a {:href url :class "f6 link underline blue mr3"}
     body])
 
 
@@ -66,7 +66,7 @@
 
 
 (defn submit [value]
-  [:input {:class "input-reset pointer dim ml3 db bn f6 br2 ph3 pv2 dib white bg-blue"
+  [:input {:class "input-reset pointer dim mr3 db bn f6 br2 ph3 pv2 dib white bg-blue"
            :type "submit"
            :value value}])
 
